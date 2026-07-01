@@ -39,7 +39,11 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. A signed-in, email-confirmed user can submit a fly with one or more photos, a structured recipe (ordered material rows + hook size + thread), a free-text description, and a difficulty level.
   4. The submission form only lets the user pick a fly type + subcategory and one or more target fish from the predefined, admin-managed taxonomy (seeded starter data).
   5. Uploaded photos are client-side compressed and stripped of EXIF/GPS before reaching storage, and a submitted fly is retrievable/visible to its author.
-**Plans**: TBD
+**Plans**: 4 plans
+- [ ] 01-01-PLAN.md — External setup: Supabase cloud project + Google/GitHub OAuth apps + env (autonomous: false)
+- [ ] 01-02-PLAN.md — Walking skeleton: Next.js/shadcn scaffold + @supabase/ssr clients/middleware + migration 0001 (profiles + bootstrap trigger + RLS) + email/pw signup + profile page (AUTH-01, AUTH-05, PROF-01)
+- [ ] 01-03-PLAN.md — Auth completion: Google/GitHub OAuth + email-confirm route + sign-in/sign-out + is_email_confirmed() gate (AUTH-02, AUTH-03, AUTH-04, AUTH-06)
+- [ ] 01-04-PLAN.md — Taxonomy + submit slice: seeded lookup tables + flies/photos/materials schema + storage bucket + submit form + image pipeline + /flies/[id] payoff (TAX-01, SUB-01..07)
 **UI hint**: yes
 
 *Foundation note (unavoidable in slice 1):* Supabase project + versioned migrations, Next.js
@@ -100,7 +104,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation & Submit | 0/TBD | Not started | - |
+| 1. Foundation & Submit | 0/4 | Not started | - |
 | 2. Public Catalog & Discovery | 0/TBD | Not started | - |
 | 3. Rate, Rank & Leaderboards | 0/TBD | Not started | - |
 | 4. Community & Moderation | 0/TBD | Not started | - |
