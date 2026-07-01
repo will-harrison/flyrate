@@ -7,9 +7,11 @@ import { createClient } from "@/lib/supabase/client";
 import { Button } from "@/components/ui/button";
 
 /**
- * Sign-out affordance for the header (AUTH-06). The full sign-out flow is
- * finalized in Plan 03; Plan 02 ships the visible control + a working client
- * signOut() call that clears the session and refreshes the server-rendered UI.
+ * Sign-out control for the header user-menu (AUTH-06). Calls signOut() on the
+ * shared browser client so it works from any page, then routes home and
+ * refreshes so the server-rendered header re-renders in its signed-out state.
+ *
+ * Rendered as a full-width menu item inside the header DropdownMenu.
  */
 export function SignOutButton() {
   const router = useRouter();
@@ -19,6 +21,7 @@ export function SignOutButton() {
     setPending(true);
     const supabase = createClient();
     await supabase.auth.signOut();
+    router.push("/");
     router.refresh();
   }
 
@@ -29,6 +32,7 @@ export function SignOutButton() {
       size="sm"
       onClick={handleSignOut}
       disabled={pending}
+      className="w-full justify-start"
     >
       {pending ? "Signing out…" : "Sign Out"}
     </Button>

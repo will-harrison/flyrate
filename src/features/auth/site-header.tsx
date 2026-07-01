@@ -1,14 +1,14 @@
 import Link from "next/link";
 
 import { createClient } from "@/lib/supabase/server";
-import { SignOutButton } from "@/features/auth/sign-out-button";
+import { UserMenu } from "@/features/auth/user-menu";
+import { Button } from "@/components/ui/button";
 
 /**
  * Server-rendered site header. Reads the session server-side (via the server
- * Supabase client's getUser()) and, when signed in, shows the user's derived
- * username linking to their public profile plus a Sign Out control (AUTH-06).
- * Signed-out visitors see nothing but the wordmark — the home page carries the
- * sign-up entry.
+ * Supabase client's getUser()) and, when signed in, shows the user-menu Avatar
+ * (profile link + Sign Out) on every page (AUTH-06). Signed-out visitors get
+ * Sign In / Create Account links instead.
  */
 export async function SiteHeader() {
   const supabase = await createClient();
@@ -32,19 +32,20 @@ export async function SiteHeader() {
         <Link href="/" className="text-lg font-semibold tracking-tight">
           Flyrate
         </Link>
-        {user ? (
+        {user && username ? (
           <nav className="flex items-center gap-2">
-            {username ? (
-              <Link
-                href={`/u/${username}`}
-                className="text-muted-foreground hover:text-foreground text-sm font-medium"
-              >
-                {username}
-              </Link>
-            ) : null}
-            <SignOutButton />
+            <UserMenu username={username} />
           </nav>
-        ) : null}
+        ) : (
+          <nav className="flex items-center gap-2">
+            <Button asChild variant="ghost" size="sm">
+              <Link href="/auth/sign-in">Sign In</Link>
+            </Button>
+            <Button asChild size="sm">
+              <Link href="/auth/sign-up">Create Account</Link>
+            </Button>
+          </nav>
+        )}
       </div>
     </header>
   );
