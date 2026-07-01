@@ -80,8 +80,9 @@ submit → rate → discover loop must.
 
 ## Constraints
 
-- **Tech stack**: Modern React front end + PostgreSQL database — user preference stated at kickoff.
-- **Auth**: Must support both email/password and social login (Google/GitHub).
+- **Tech stack**: Modern React front end + Supabase backend (cloud-hosted Postgres) — user preference stated at kickoff.
+- **Backend/DB**: Supabase — managed cloud Postgres, plus its built-in Auth, Storage (fly photos), and auto-generated APIs. Chosen to get a Firebase-like hosted convenience while keeping a relational Postgres data model.
+- **Auth**: Must support both email/password and social login (Google/GitHub) — provided by Supabase Auth.
 - **Access model**: Browsing/search must work anonymously; submitting and rating require an account.
 
 ## Key Decisions
@@ -92,7 +93,7 @@ submit → rate → discover loop must.
 | Predefined taxonomy + user suggestions queued for admin approval | Keeps category data clean while letting the taxonomy grow | — Pending |
 | Anonymous browsing; account required to submit/rate | Maximizes discovery reach while protecting content quality | — Pending |
 | Minimal admin-only moderation for v1 | Ship the core loop; defer flagging/removal tooling until there's volume | — Pending |
-| React + PostgreSQL stack | User preference; well-supported, strong fit for relational taxonomy + ratings data | — Pending |
+| React + Supabase (cloud Postgres) stack | Satisfies both the Postgres preference and the desire for a cloud-hosted, Firebase-like managed backend; Supabase Auth covers email/password + Google/GitHub, and Storage covers fly photos | — Pending |
 
 ## Evolution
 
