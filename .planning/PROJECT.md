@@ -94,6 +94,7 @@ submit → rate → discover loop must.
 | Anonymous browsing; account required to submit/rate | Maximizes discovery reach while protecting content quality | — Pending |
 | Minimal admin-only moderation for v1 | Ship the core loop; defer flagging/removal tooling until there's volume | — Pending |
 | React + Supabase (cloud Postgres) stack | Satisfies both the Postgres preference and the desire for a cloud-hosted, Firebase-like managed backend; Supabase Auth covers email/password + Google/GitHub, and Storage covers fly photos | — Pending |
+| Supabase **free tier** for v1 | Avoids Pro-plan cost; photo pipeline uses client-side compression + EXIF/GPS stripping instead of Pro server-side image transforms | — Pending |
 | Supabase **free tier** for v1 (client-side image compression, not Pro transforms) | Avoids Pro-plan cost; photos are compressed + EXIF/GPS-stripped in the browser before upload | — Pending |
 
 ## Evolution
