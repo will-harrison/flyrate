@@ -5,15 +5,15 @@ milestone_name: milestone
 current_phase: 1
 current_phase_name: Foundation & Submit
 status: executing
-stopped_at: Phase 1 context gathered
-last_updated: "2026-07-01T16:38:51.510Z"
+stopped_at: Completed 01-02-PLAN.md (walking skeleton)
+last_updated: "2026-07-01T18:04:37.838Z"
 last_activity: 2026-07-01
-last_activity_desc: Roadmap created (4 coarse vertical-slice phases, 34/34 requirements mapped)
+last_activity_desc: Executed 01-02 walking skeleton (scaffold + @supabase/ssr + migration 0001 + profile loop); static verification passed, live-DB steps deferred to local run
 progress:
   total_phases: 4
   completed_phases: 0
-  total_plans: 0
-  completed_plans: 0
+  total_plans: 4
+  completed_plans: 2
   percent: 0
 ---
 
@@ -29,11 +29,11 @@ See: .planning/PROJECT.md (updated 2026-07-01)
 ## Current Position
 
 Phase: 1 of 4 (Foundation & Submit)
-Plan: 0 of TBD in current phase
-Status: Ready to execute
-Last activity: 2026-07-01 — Roadmap created (4 coarse vertical-slice phases, 34/34 requirements mapped)
+Plan: 2 of 4 in current phase (01-01, 01-02 complete)
+Status: Executing — Plan 01-03 next
+Last activity: 2026-07-01 — Executed 01-02 walking skeleton (scaffold + @supabase/ssr + migration 0001 + profile loop); static verification passed, live-DB steps deferred to local run
 
-Progress: [░░░░░░░░░░] 0%
+Progress: [█████░░░░░] 50%
 
 ## Performance Metrics
 
@@ -55,6 +55,7 @@ Progress: [░░░░░░░░░░] 0%
 - Trend: —
 
 *Updated after each plan completion*
+| Phase 01 P02 | 13 | 3 tasks | 27 files |
 
 ## Accumulated Context
 
@@ -68,10 +69,12 @@ Recent decisions affecting current work:
 - [Roadmap]: Ratings fraud guards (`UNIQUE(fly_id, user_id)`, no-self-rating RLS + trigger) and the Bayesian aggregate ship together in Phase 3, before leaderboards read them.
 - [Roadmap]: Moderation ships last (Phase 4) — v1 publishes on submit; moderation is admin-only cleanup.
 - [User 2026-07-01]: Supabase **free tier** for now → photo pipeline uses client-side compression + EXIF/GPS stripping (no Pro server-side image transforms).
+- [01-02 2026-07-01]: Username collision resolved via `INSERT ... ON CONFLICT (username) DO NOTHING` + id-suffix fallback in `handle_new_user()` — corrected from the plan's `DO UPDATE`, which would rewrite the wrong (other user's) row.
+- [01-02 2026-07-01]: shadcn components hand-vendored and `database.types.ts` hand-authored (shadcn registry + `supabase gen types` unreachable in the ephemeral container); regenerate types locally after `supabase db push`.
 
 ### Pending Todos
 
-None yet.
+- [01-02 → local]: Run `supabase link` + `supabase db push` (apply migration 0001) + `supabase gen types typescript --linked > src/types/database.types.ts`, then complete Task 4 human-verify (signup → profiles row → server-rendered profile page → hard-refresh session persistence). Details in 01-02-SUMMARY.md.
 
 ### Blockers/Concerns
 
@@ -91,6 +94,6 @@ Items acknowledged and carried forward from previous milestone close:
 
 ## Session Continuity
 
-Last session: 2026-07-01T15:51:50.220Z
-Stopped at: Phase 1 context gathered
-Resume file: .planning/phases/01-foundation-submit/01-CONTEXT.md
+Last session: 2026-07-01T18:04:37.830Z
+Stopped at: Completed 01-02-PLAN.md (walking skeleton) — live-DB steps deferred to local run
+Resume file: .planning/phases/01-foundation-submit/01-03-PLAN.md

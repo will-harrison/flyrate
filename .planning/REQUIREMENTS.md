@@ -9,16 +9,16 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Authentication
 
-- [ ] **AUTH-01**: User can sign up with email and password
+- [x] **AUTH-01**: User can sign up with email and password
 - [ ] **AUTH-02**: User receives email verification after signup and must confirm before rating/submitting
 - [ ] **AUTH-03**: User can sign in with Google (OAuth)
 - [ ] **AUTH-04**: User can sign in with GitHub (OAuth)
-- [ ] **AUTH-05**: User session persists across browser refresh
+- [x] **AUTH-05**: User session persists across browser refresh
 - [ ] **AUTH-06**: User can sign out from any page
 
 ### Profiles
 
-- [ ] **PROF-01**: Every registered user has a public profile page
+- [x] **PROF-01**: Every registered user has a public profile page
 - [ ] **PROF-02**: A profile shows the user's submission history
 - [ ] **PROF-03**: A profile shows the user's rating history
 
@@ -104,13 +104,13 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| AUTH-01 | Phase 1 | Pending |
+| AUTH-01 | Phase 1 | Complete |
 | AUTH-02 | Phase 1 | Pending |
 | AUTH-03 | Phase 1 | Pending |
 | AUTH-04 | Phase 1 | Pending |
-| AUTH-05 | Phase 1 | Pending |
+| AUTH-05 | Phase 1 | Complete |
 | AUTH-06 | Phase 1 | Pending |
-| PROF-01 | Phase 1 | Pending |
+| PROF-01 | Phase 1 | Complete |
 | SUB-01 | Phase 1 | Pending |
 | SUB-02 | Phase 1 | Pending |
 | SUB-03 | Phase 1 | Pending |
@@ -143,11 +143,13 @@ Which phases cover which requirements. Updated during roadmap creation.
 | MOD-03 | Phase 4 | Pending |
 
 **Coverage:**
+
 - v1 requirements: 34 total
 - Mapped to phases: 34 ✓
 - Unmapped: 0 ✓
 
 **By phase:**
+
 - Phase 1 — Foundation & Submit: 15 (AUTH-01..06, PROF-01, SUB-01..07, TAX-01)
 - Phase 2 — Public Catalog & Discovery: 6 (DISC-01..06)
 - Phase 3 — Rate, Rank & Leaderboards: 9 (RATE-01..05, LEAD-01..04)
