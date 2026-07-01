@@ -104,13 +104,55 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| (to be populated by roadmap) | — | Pending |
+| AUTH-01 | Phase 1 | Pending |
+| AUTH-02 | Phase 1 | Pending |
+| AUTH-03 | Phase 1 | Pending |
+| AUTH-04 | Phase 1 | Pending |
+| AUTH-05 | Phase 1 | Pending |
+| AUTH-06 | Phase 1 | Pending |
+| PROF-01 | Phase 1 | Pending |
+| SUB-01 | Phase 1 | Pending |
+| SUB-02 | Phase 1 | Pending |
+| SUB-03 | Phase 1 | Pending |
+| SUB-04 | Phase 1 | Pending |
+| SUB-05 | Phase 1 | Pending |
+| SUB-06 | Phase 1 | Pending |
+| SUB-07 | Phase 1 | Pending |
+| TAX-01 | Phase 1 | Pending |
+| DISC-01 | Phase 2 | Pending |
+| DISC-02 | Phase 2 | Pending |
+| DISC-03 | Phase 2 | Pending |
+| DISC-04 | Phase 2 | Pending |
+| DISC-05 | Phase 2 | Pending |
+| DISC-06 | Phase 2 | Pending |
+| RATE-01 | Phase 3 | Pending |
+| RATE-02 | Phase 3 | Pending |
+| RATE-03 | Phase 3 | Pending |
+| RATE-04 | Phase 3 | Pending |
+| RATE-05 | Phase 3 | Pending |
+| LEAD-01 | Phase 3 | Pending |
+| LEAD-02 | Phase 3 | Pending |
+| LEAD-03 | Phase 3 | Pending |
+| LEAD-04 | Phase 3 | Pending |
+| PROF-02 | Phase 4 | Pending |
+| PROF-03 | Phase 4 | Pending |
+| TAX-02 | Phase 4 | Pending |
+| TAX-03 | Phase 4 | Pending |
+| MOD-01 | Phase 4 | Pending |
+| MOD-02 | Phase 4 | Pending |
+| MOD-03 | Phase 4 | Pending |
 
 **Coverage:**
 - v1 requirements: 34 total
-- Mapped to phases: 0 (pending roadmap)
-- Unmapped: 34 ⚠️
+- Mapped to phases: 34 ✓
+- Unmapped: 0 ✓
+
+**By phase:**
+- Phase 1 — Foundation & Submit: 15 (AUTH-01..06, PROF-01, SUB-01..07, TAX-01)
+- Phase 2 — Public Catalog & Discovery: 6 (DISC-01..06)
+- Phase 3 — Rate, Rank & Leaderboards: 9 (RATE-01..05, LEAD-01..04)
+- Phase 4 — Community & Moderation: 7 (PROF-02, PROF-03, TAX-02, TAX-03, MOD-01..03)
 
 ---
 *Requirements defined: 2026-07-01*
-*Last updated: 2026-07-01 after initialization*
+*Last updated: 2026-07-01 after roadmap creation*
