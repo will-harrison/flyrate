@@ -1,0 +1,19 @@
+# Supabase project config. The project_id must match the linked cloud project's
+# reference slug. Local `supabase start` (Docker) is optional in this project —
+# migrations are applied to the cloud project via `supabase db push`. See
+# .planning/phases/01-foundation-submit/01-02-SUMMARY.md for the exact commands.
+project_id = "flyrate"
+
+[db]
+# Postgres major version of the linked Supabase cloud project.
+major_version = 15
+
+[db.migrations]
+# Apply files in supabase/migrations/ in lexicographic order.
+enabled = true
+
+[auth]
+# Site URL and additional redirect URLs are configured in the Supabase dashboard
+# (Plan 01-01). Email confirmation is required before rating/submitting (AUTH-02,
+# enforced by RLS in a later migration).
+enable_signup = true
