@@ -59,7 +59,29 @@ describeOrSkip("flies insert is RLS-gated on email confirmation (AUTH-02)", () =
     // Sanity: the session's email must NOT be confirmed for this test to be meaningful.
     expect(signUp.user?.email_confirmed_at ?? null).toBeNull();
 
-    // Attempt a direct insert bypassing the Server Action entirely.
+    // Fetch valid taxonomy IDs (taxonomy is public-readable via `USING (true)`).
+    // Supplying them makes the insert payload satisfy every NOT NULL / FK
+    // constraint, so the ONLY remaining reason the write can be rejected is the
+    // email-confirmed RLS predicate — isolating the AUTH-02 boundary this test
+    // claims to prove (rather than a payload NOT NULL/FK error masking it).
+    const { data: flyType } = await supabase
+      .from("fly_types")
+      .select("id")
+      .limit(1)
+      .single();
+    const { data: subcategory } = await supabase
+      .from("fly_subcategories")
+      .select("id")
+      .eq("fly_type_id", flyType?.id as string)
+      .limit(1)
+      .single();
+    // Guard: without seeded taxonomy the test cannot isolate the gate — fail
+    // loudly rather than silently reproducing the weak NOT NULL/FK rejection.
+    expect(flyType?.id, "taxonomy seed (0004) must be applied").toBeTruthy();
+    expect(subcategory?.id, "taxonomy seed (0004) must be applied").toBeTruthy();
+
+    // Attempt a direct insert bypassing the Server Action entirely. The payload
+    // is now fully valid — the email-confirmed RLS check is the sole gate left.
     const { data: inserted, error: insertError } = await supabase
       .from("flies")
       .insert({
@@ -68,9 +90,8 @@ describeOrSkip("flies insert is RLS-gated on email confirmation (AUTH-02)", () =
         hook_size: "#14",
         thread: "8/0 black",
         difficulty: "beginner",
-        // NOTE: fly_type_id / fly_subcategory_id are NOT NULL FKs; the RLS
-        // WITH CHECK is evaluated regardless. The insert must be rejected by
-        // the email-confirmed policy (or a NOT NULL/FK error) — never succeed.
+        fly_type_id: flyType?.id as string,
+        fly_subcategory_id: subcategory?.id as string,
       } as never)
       .select("id");
 
