@@ -22,7 +22,7 @@ else. Each phase is an end-to-end user capability, not a horizontal technical la
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Foundation & Submit** - Scaffold (RLS + SSR from day one), auth/profiles, seeded taxonomy, and fly submission — sign in → submit a fly → see it exist
+- [x] **Phase 1: Foundation & Submit** - Scaffold (RLS + SSR from day one), auth/profiles, seeded taxonomy, and fly submission — sign in → submit a fly → see it exist (completed 2026-07-02)
 - [ ] **Phase 2: Public Catalog & Discovery** - Anonymous, SEO-crawlable browse/search/filter and fly detail pages
 - [ ] **Phase 3: Rate, Rank & Leaderboards** - Community 1–5 star rating with fraud guards + Bayesian score, plus global/category/fish leaderboards and a recent view
 - [ ] **Phase 4: Community & Moderation** - Profile history, user category suggestions, and the admin moderation console (ships last)
@@ -43,7 +43,7 @@ Decimal phases appear between their surrounding integers in numeric order.
   4. The submission form only lets the user pick a fly type + subcategory and one or more target fish from the predefined, admin-managed taxonomy (seeded starter data).
   5. Uploaded photos are client-side compressed and stripped of EXIF/GPS before reaching storage, and a submitted fly is retrievable/visible to its author.
 
-**Plans**: 2/4 plans executed
+**Plans**: 4/4 plans complete
 **Wave 1**
 
 - [x] 01-01-PLAN.md — External setup: Supabase cloud project + Google/GitHub OAuth apps + env (autonomous: false)
@@ -54,11 +54,11 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 **Wave 3** *(blocked on Wave 2 completion)*
 
-- [ ] 01-03-PLAN.md — Auth completion: Google/GitHub OAuth + email-confirm route + sign-in/sign-out + is_email_confirmed() gate (AUTH-02, AUTH-03, AUTH-04, AUTH-06)
+- [x] 01-03-PLAN.md — Auth completion: Google/GitHub OAuth + email-confirm route + sign-in/sign-out + is_email_confirmed() gate (AUTH-02, AUTH-03, AUTH-04, AUTH-06)
 
 **Wave 4** *(blocked on Wave 3 completion)*
 
-- [ ] 01-04-PLAN.md — Taxonomy + submit slice: seeded lookup tables + flies/photos/materials schema + storage bucket + submit form + image pipeline + /flies/[id] payoff (TAX-01, SUB-01..07)
+- [x] 01-04-PLAN.md — Taxonomy + submit slice: seeded lookup tables + flies/photos/materials schema + storage bucket + submit form + image pipeline + /flies/[id] payoff (TAX-01, SUB-01..07)
 
 **UI hint**: yes
 
@@ -129,7 +129,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation & Submit | 2/4 | In Progress|  |
+| 1. Foundation & Submit | 4/4 | Complete   | 2026-07-02 |
 | 2. Public Catalog & Discovery | 0/TBD | Not started | - |
 | 3. Rate, Rank & Leaderboards | 0/TBD | Not started | - |
 | 4. Community & Moderation | 0/TBD | Not started | - |

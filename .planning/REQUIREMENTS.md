@@ -24,17 +24,17 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Submission
 
-- [ ] **SUB-01**: A signed-in user can submit a fly with one or more photos
-- [ ] **SUB-02**: A submission includes a structured tying recipe (ordered material rows plus hook size and thread)
-- [ ] **SUB-03**: A submission includes a free-text description
-- [ ] **SUB-04**: A submission includes a tying difficulty level (beginner/intermediate/advanced)
-- [ ] **SUB-05**: A submission is assigned one fly type and subcategory
-- [ ] **SUB-06**: A submission is assigned one or more target fish types
-- [ ] **SUB-07**: Fly photos are compressed and have EXIF/GPS metadata stripped before upload
+- [x] **SUB-01**: A signed-in user can submit a fly with one or more photos
+- [x] **SUB-02**: A submission includes a structured tying recipe (ordered material rows plus hook size and thread)
+- [x] **SUB-03**: A submission includes a free-text description
+- [x] **SUB-04**: A submission includes a tying difficulty level (beginner/intermediate/advanced)
+- [x] **SUB-05**: A submission is assigned one fly type and subcategory
+- [x] **SUB-06**: A submission is assigned one or more target fish types
+- [x] **SUB-07**: Fly photos are compressed and have EXIF/GPS metadata stripped before upload
 
 ### Taxonomy
 
-- [ ] **TAX-01**: Fly types, subcategories, and fish types come from a predefined, admin-managed taxonomy
+- [x] **TAX-01**: Fly types, subcategories, and fish types come from a predefined, admin-managed taxonomy
 - [ ] **TAX-02**: A signed-in user can suggest a new fly category or fish type
 - [ ] **TAX-03**: Category suggestions are queued as pending until an admin acts on them
 
@@ -111,14 +111,14 @@ Which phases cover which requirements. Updated during roadmap creation.
 | AUTH-05 | Phase 1 | Complete |
 | AUTH-06 | Phase 1 | Pending |
 | PROF-01 | Phase 1 | Complete |
-| SUB-01 | Phase 1 | Pending |
-| SUB-02 | Phase 1 | Pending |
-| SUB-03 | Phase 1 | Pending |
-| SUB-04 | Phase 1 | Pending |
-| SUB-05 | Phase 1 | Pending |
-| SUB-06 | Phase 1 | Pending |
-| SUB-07 | Phase 1 | Pending |
-| TAX-01 | Phase 1 | Pending |
+| SUB-01 | Phase 1 | Complete |
+| SUB-02 | Phase 1 | Complete |
+| SUB-03 | Phase 1 | Complete |
+| SUB-04 | Phase 1 | Complete |
+| SUB-05 | Phase 1 | Complete |
+| SUB-06 | Phase 1 | Complete |
+| SUB-07 | Phase 1 | Complete |
+| TAX-01 | Phase 1 | Complete |
 | DISC-01 | Phase 2 | Pending |
 | DISC-02 | Phase 2 | Pending |
 | DISC-03 | Phase 2 | Pending |
